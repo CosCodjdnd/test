@@ -1,0 +1,118 @@
+:root {
+  color-scheme: dark;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background: #080b1a;
+  color: #f5f6ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #1a234f 0%, #070912 55%, #05070b 100%);
+}
+
+.game-shell {
+  width: min(100%, 1100px);
+  padding: 32px;
+  display: grid;
+  gap: 18px;
+}
+
+header {
+  display: grid;
+  gap: 8px;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+header p {
+  margin: 0;
+  color: #c9d4ff;
+  max-width: 640px;
+}
+
+.hud {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 12px 18px;
+  background: rgba(13, 20, 48, 0.75);
+  border: 1px solid rgba(123, 152, 255, 0.35);
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(3, 6, 20, 0.55);
+}
+
+.hud div {
+  font-weight: 600;
+}
+
+.canvas-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid rgba(126, 156, 255, 0.45);
+  box-shadow: 0 20px 50px rgba(3, 5, 20, 0.6);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(180deg, #79b7ff 0%, #97d1ff 35%, #c6ecff 100%);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.controls span {
+  margin-left: 8px;
+  color: #b4c0ff;
+}
+
+button {
+  background: linear-gradient(120deg, #ffb347, #ff7e5f);
+  border: none;
+  color: #1a0f05;
+  padding: 12px 18px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 10px 18px rgba(255, 126, 95, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 14px 24px rgba(255, 126, 95, 0.5);
+}
+
+button:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+@media (max-width: 700px) {
+  .game-shell {
+    padding: 20px;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

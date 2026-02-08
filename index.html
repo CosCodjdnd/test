@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Sprint Platformer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-shell">
+      <header>
+        <h1>Star Sprint</h1>
+        <p>Run, jump, and collect the star shards in this retro side-scroller.</p>
+      </header>
+      <section class="hud">
+        <div>Score: <span id="score">0</span></div>
+        <div>Lives: <span id="lives">3</span></div>
+        <div>Level: <span id="level">1</span></div>
+      </section>
+      <div class="canvas-wrap">
+        <canvas id="game" width="960" height="540"></canvas>
+      </div>
+      <section class="controls">
+        <div>
+          <strong>Controls:</strong>
+          <span>A/D or ←/→ move</span>
+          <span>Space/W/↑ jump</span>
+          <span>Shift dash</span>
+        </div>
+        <button id="reset">Restart Adventure</button>
+      </section>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>
