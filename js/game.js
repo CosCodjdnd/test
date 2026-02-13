@@ -15,6 +15,7 @@ class Game {
         this.hud = null;
         this.isRunning = false;
         this.selectedRole = null;
+        this.MAX_FRAME_TIME = 0.05;
 
         // Fog / ambient
         this.ambientLight = null;
@@ -227,7 +228,7 @@ class Game {
         if (!this.isRunning) return;
         requestAnimationFrame(() => this.gameLoop());
 
-        const deltaTime = Math.min(this.clock.getDelta(), 0.05);
+        const deltaTime = Math.min(this.clock.getDelta(), this.MAX_FRAME_TIME);
 
         // Update player
         this.player.update(deltaTime, this.galaxy);

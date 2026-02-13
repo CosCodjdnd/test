@@ -1,6 +1,6 @@
 /**
  * Weapons System for Past Jupiter: Odyssey
- * Gun and Pistol with projectile physics
+ * Pistol and Rifle with projectile physics
  */
 
 class Weapons {

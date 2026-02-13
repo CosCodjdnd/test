@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "past-jupiter-odyssey",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/CosCodjdnd/test#readme",
   "dependencies": {
-    "three": "^0.128.0"
+    "three": "^0.160.0"
   }
 }
