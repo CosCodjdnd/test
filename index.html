@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Jupiter: Odyssey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="hud">
+        <div id="crosshair">+</div>
+        <div id="speed-indicator">
+            <span id="speed-label">SPEED</span>
+            <span id="speed-value">0</span> <span id="speed-unit">m/s</span>
+        </div>
+        <div id="altitude-indicator">
+            <span id="alt-label">ALT</span>
+            <span id="alt-value">0</span> <span id="alt-unit">km</span>
+        </div>
+        <div id="weapon-indicator">
+            <span id="weapon-name">PISTOL</span>
+            <span id="ammo-count">∞</span>
+        </div>
+        <div id="health-bar-container">
+            <div id="health-bar"></div>
+            <span id="health-text">100</span>
+        </div>
+        <div id="info-panel">
+            <div id="location-info"></div>
+            <div id="planet-info"></div>
+        </div>
+        <div id="controls-hint">
+            <p>WASD - Move | SHIFT - Boost | SPACE - Up/Jump | C - Down</p>
+            <p>Mouse - Look | Click - Shoot | 1/2 - Switch Weapons</p>
+            <p>E - Enter/Exit Ship | F - Interact</p>
+        </div>
+    </div>
+
+    <div id="title-screen">
+        <div id="title-content">
+            <h1>PAST JUPITER</h1>
+            <h2>ODYSSEY</h2>
+            <p class="tagline">Explore. Fight. Survive.</p>
+            <div id="role-select">
+                <h3>Choose Your Path</h3>
+                <div class="role-options">
+                    <button class="role-btn" data-role="explorer">
+                        <span class="role-icon">🔭</span>
+                        <span class="role-name">Explorer</span>
+                        <span class="role-desc">Chart unknown worlds</span>
+                    </button>
+                    <button class="role-btn" data-role="bounty-hunter">
+                        <span class="role-icon">🎯</span>
+                        <span class="role-name">Bounty Hunter</span>
+                        <span class="role-desc">Hunt your targets</span>
+                    </button>
+                    <button class="role-btn" data-role="soldier">
+                        <span class="role-icon">⚔️</span>
+                        <span class="role-name">Soldier</span>
+                        <span class="role-desc">Fight for survival</span>
+                    </button>
+                    <button class="role-btn" data-role="freelancer">
+                        <span class="role-icon">🚀</span>
+                        <span class="role-name">Freelancer</span>
+                        <span class="role-desc">Forge your own path</span>
+                    </button>
+                </div>
+            </div>
+            <button id="start-btn" disabled>LAUNCH</button>
+        </div>
+    </div>
+
+    <div id="loading-screen" style="display:none;">
+        <div id="loading-content">
+            <h2>GENERATING UNIVERSE</h2>
+            <div id="loading-bar-container">
+                <div id="loading-bar"></div>
+            </div>
+            <p id="loading-text">Initializing star systems...</p>
+        </div>
+    </div>
+
+    <script src="vendor/three.min.js"></script>
+    <script src="js/noise.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/voxel-planet.js"></script>
+    <script src="js/galaxy.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/ship.js"></script>
+    <script src="js/weapons.js"></script>
+    <script src="js/hud.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
