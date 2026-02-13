@@ -9,6 +9,7 @@ import pygame
 
 from ..characters import Character, create_character
 from ..gods import ALL_GODS, ALL_SPIRITS
+from ..enums import CEREMONY_SEASONS
 from ..ceremony import Ceremony
 from .constants import (
     SCREEN_WIDTH, SCREEN_HEIGHT, FPS,
@@ -126,7 +127,7 @@ def run_character_creation(screen: pygame.Surface) -> Character:
                             mark_revealed = True
                         else:
                             phase = "ceremony"
-                            ceremony = Ceremony(season=random.choice(["Spring", "Autumn"]))
+                            ceremony = Ceremony(season=random.choice(CEREMONY_SEASONS))
                             spirit = ceremony.run_auto_ceremony(char)
                             ceremony_log = [line.strip() for line in ceremony.log if line.strip()]
                             if spirit:

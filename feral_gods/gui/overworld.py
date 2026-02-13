@@ -17,7 +17,7 @@ from ..ceremony import SHRINE_CHALLENGES, Ceremony
 from .constants import (
     SCREEN_WIDTH, SCREEN_HEIGHT, FPS, TILE_SIZE,
     BLACK, WHITE, GOLD, TEXT_COLOR, TEXT_DIM,
-    PASSABLE_TILES, ENCOUNTER_RATE, GOD_COLORS,
+    PASSABLE_TILES, ENCOUNTER_RATE, GOD_COLORS, MESSAGE_HISTORY_LIMIT,
     TILE_GRASS, TILE_SHRINE,
 )
 from .maps import GameMap, get_all_maps
@@ -309,8 +309,8 @@ class OverworldScene:
     def _add_message(self, msg: str) -> None:
         self.messages.append(msg)
         self.message_timer = 2.0
-        if len(self.messages) > 50:
-            self.messages = self.messages[-50:]
+        if len(self.messages) > MESSAGE_HISTORY_LIMIT:
+            self.messages = self.messages[-MESSAGE_HISTORY_LIMIT:]
 
     # ── update ────────────────────────────────────────────────────
 

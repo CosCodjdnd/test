@@ -19,7 +19,7 @@ pygame.display.set_mode((1, 1))
 
 from feral_gods.gui.constants import (
     SCREEN_WIDTH, SCREEN_HEIGHT, TILE_SIZE, FPS,
-    GOD_COLORS, PASSABLE_TILES, ENCOUNTER_RATE,
+    GOD_COLORS, PASSABLE_TILES, ENCOUNTER_RATE, MESSAGE_HISTORY_LIMIT,
     TILE_GRASS, TILE_PATH, TILE_WATER, TILE_TREE, TILE_STONE,
     TILE_SHRINE, TILE_WALL, TILE_DOOR, TILE_SAND,
     BLACK, WHITE, BROWN,
@@ -337,4 +337,5 @@ class TestOverworld:
         ow = OverworldScene(screen, player)
         for i in range(60):
             ow._add_message(f"Message {i}")
-        assert len(ow.messages) <= 51  # 50 limit + 1 initial
+        # Messages are capped at MESSAGE_HISTORY_LIMIT
+        assert len(ow.messages) <= MESSAGE_HISTORY_LIMIT
