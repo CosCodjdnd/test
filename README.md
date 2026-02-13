@@ -17,15 +17,37 @@ A turn-based RPG set in the world of Feral Gods, where each person receives a sp
 
 ## How to Play
 
+### 2D Visual Mode (Recommended)
+
+```bash
+pip install pygame
+python run_gui.py
+```
+
+Launches a full 2D visual game inspired by classic JRPGs (Final Fantasy, Dragon Quest) with:
+- **Tile-based overworld** — Walk around with arrow keys / WASD, explore multiple maps
+- **Visual turn-based combat** — Side-view battles with animated sprites, HP/energy bars, and command menus
+- **Character creation** — Name entry, Diviner's Mark check, and animated Ceremony
+- **Procedural pixel art** — All sprites generated at runtime, no external assets needed
+
+#### Controls
+| Key | Action |
+|-----|--------|
+| Arrow Keys / WASD | Move (overworld) / Navigate menus |
+| Enter / Z / Space | Confirm / Select |
+| Escape / X | Back / Pause menu |
+
+### Text Mode
+
 ```bash
 python main.py
 ```
 
 ### Game Modes
 
-1. **New Game** — Create a character, undergo the Ceremony to receive your spirit companion, then battle enemies to gain experience and level up.
-2. **Quick Battle** — Watch two auto-generated characters fight.
-3. **Lore** — Learn about the eight gods and their domains.
+1. **New Game** — Create a character, undergo the Ceremony to receive your spirit companion, then explore the world, battle enemies, and level up.
+2. **Quick Battle** — Watch two auto-generated characters fight in a visual battle.
+3. **Lore** — Browse the eight gods, their spirits, and abilities.
 
 ### The Ceremony
 
@@ -58,10 +80,22 @@ feral_gods/
 ├── characters.py      # Character model and factory functions
 ├── combat.py          # Turn-based combat engine
 ├── ceremony.py        # The Ceremony system
-└── game.py            # Main game loop and UI
+├── game.py            # CLI game loop
+└── gui/               # 2D Pygame visual interface
+    ├── __init__.py
+    ├── constants.py   # Colors, sizes, tuning values
+    ├── sprites.py     # Procedural pixel-art sprite generation
+    ├── maps.py        # Tile-based overworld maps
+    ├── ui.py          # Reusable UI drawing helpers
+    ├── battle_scene.py  # Visual turn-based combat scene
+    ├── overworld.py   # Top-down exploration scene
+    ├── menu_scenes.py # Main menu, character creation, lore
+    └── main_gui.py    # GUI entry point
 tests/
-└── test_feral_gods.py # 58 tests covering all game mechanics
-main.py                # Entry point
+├── test_feral_gods.py # 58 core game mechanic tests
+└── test_gui.py        # 40 GUI module tests
+main.py                # CLI entry point
+run_gui.py             # 2D visual game entry point
 ```
 
 ## Running Tests
